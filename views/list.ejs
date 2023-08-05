@@ -1,0 +1,29 @@
+<%- include('includes/head.ejs', {title: "Daftar user"}) %>
+<%- include('includes/navbar.ejs') %>
+</head>
+<body>
+  <div class="container">
+    <p class="h2">Daftar Pengguna</p>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>name</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let user of JSON.parse(convert)) { %>>
+            <tr>
+              <td><%= user.number %></td>
+              <td><%= user.userName %></td>
+              <td><%= user.email %></td>
+              <td><%= user.password %></td>
+            </tr>
+              <% } %>
+        </tbody>
+    </table>
+  </div>
+</body>
+</html>
